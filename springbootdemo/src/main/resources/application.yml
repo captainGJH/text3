@@ -1,0 +1,41 @@
+
+server:
+  port: 1010
+  servlet:
+      context-path: /springboot
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    max-active: 50
+    initial-size: 10
+    max-wait: 60000
+    min-idle: 10
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: select 1 from dual
+    test-on-borrow: false
+    test-on-return: false
+    test-while-idle: true
+    pool-prepared-statements: false
+    filters: stat,wall,slf4j
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: 123456
+
+  jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+logging:
+  file:
+    path: /spring/logbook

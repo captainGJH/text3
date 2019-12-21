@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div th:replace="head :: html"></div>
+<body>
+
+<center>
+<div th:each="show : ${show}">
+   <p>标题：[[${show.title}]]</p>
+    <p>类型：[[${show.ox}]]</p>
+    <p>内容：[[${show.newbodys}]]</p>
+    <p>上传时间：[[${show.time}]]</p>
+
+</div>
+
+
+
+
+</center>
+</body>
+<div th:replace="botton :: html"></div>
+</html>
